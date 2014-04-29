@@ -36,40 +36,36 @@ App::Basis::Email
 
 =head1 DESCRIPTION
  
-  Sending email should be simple, sending formatted email should be simple too.
-  I just want to be able to say send this thing via this process.
+Sending email should be simple, sending formatted email should be simple too.
+I just want to be able to say send this thing via this process.
 
-  This module provides that, a way to simply send email (plain/html or markdown) via
-  either a SMTP or sendmail target.
+This module provides that, a way to simply send email (plain/html or markdown) via
+either a SMTP or sendmail target.
 
-  Obviously I do nothing new, just wrap around existing modules, to make life simple.
+Obviously I do nothing new, just wrap around existing modules, to make life simple.
 
 =head1 AUTHOR
 
- kevin mulholland
-
-=head1 VERSIONS
-
- v0.1  2013/01/30, initial work
+kevin mulholland
 
 =head1 Notes
 
- if you want templating then do it outside of this module and pass the formatted
- HTML in
+if you want templating then do it outside of this module and pass the formatted
+HTML/markdown in
 
 =head1 See Also
 
- To create email I use L<Email::MIME::CreateHTML>, you may need to force this to 
- install it as there is a slight test bug
- To send email I use L<Email::Sender::Simple> with L<Email::Sender::Transport::SMTP> and L<Email::Sender::Transport::Sendmail>
- Markdown processing is done with L<Text::Markdown>
+To create email I use L<Email::MIME::CreateHTML>, you may need to force this to 
+install it as there is a slight test bug
+To send email I use L<Email::Sender::Simple> with L<Email::Sender::Transport::SMTP> and L<Email::Sender::Transport::Sendmail>
+Markdown processing is done with L<Text::Markdown>
 
 =over 4
 
 =cut
 
 package App::Basis::Email;
-$App::Basis::Email::VERSION = '0.2';
+$App::Basis::Email::VERSION = '0.3';
 use 5.010;
 use warnings;
 use strict;
@@ -300,11 +296,6 @@ sub send {
 }
 
 # ----------------------------------------------------------------------------
-# end
-# make sure we do any cleanup required
-
-END {
-}
 
 =back
 
